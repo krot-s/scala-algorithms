@@ -1,18 +1,21 @@
+/**
+ * Find most frequest elemet with Boyer-Moore algorithm
+ */
 object FindFrequentElement extends App {
-	val elements = Array(1,2,1,2,1,2,1,2,1,2,1,3,1,3,1,1,1,1,3,3)
-	var candidate = elements(0);
-	var standing = 0
-	for(x <- elements){
-		println("c = " + candidate)
-		if(standing == 0){
-		  println("x = " + x)
-		  candidate = x
-		  standing = standing + 1
-		} else {
-		  println("adding " + (if (candidate == x) 1 else -1))
-		  standing = standing + (if (candidate == x) 1 else -1)
-		}
-	}
+	val xs = Array(1,2,3,1,1)
+	println(mostFrequentElement(xs : _*))
 	
-	println(candidate)
+	def mostFrequentElement[T](xs: T*) = {
+		var candidate = xs(0);
+		var standing = 0
+		for(x <- xs){
+			if(standing == 0){
+			  candidate = x
+			  standing = standing + 1
+			} else {
+			  standing = standing + (if (candidate == x) 1 else -1)
+			}
+		}
+		if(standing > 0) Some(candidate) else None
+	}
 }

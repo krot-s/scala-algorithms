@@ -47,7 +47,8 @@ class Graph {
 			    })
 				    
 			    if(weight + w < current){
-			    	toVisit += ((n, weight + w, path.clone() + n ))
+			      // TODO uncomment this
+			    	// toVisit += ((n, weight + w, path.clone() + n ))
 			    }
 			  }
 		  }
