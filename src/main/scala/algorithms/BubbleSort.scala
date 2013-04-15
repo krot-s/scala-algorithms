@@ -24,23 +24,23 @@ object BubbleSort extends App {
 
   def bubbleSortFunctional[T <% Ordered[T]](xs: List[T]): List[T] = {
     def sort[T <% Ordered[T]](in: ListBuffer[T], n: Int, j: Int) {
-      if(in(n) > in(j)){
+      if (in(n) > in(j)) {
         swap(in, n, j)
         sort(in, 0, 1)
       } else if (j < in.length - 1)
         sort(in, n + 1, j + 1)
     }
 
-    if(xs.isEmpty) xs else {
-	    val xz = ListBuffer[T](xs: _*)
-	    sort(xz, 0, 1)
-	    xz.toList
+    if (xs.isEmpty) xs else {
+      val xz = ListBuffer[T](xs: _*)
+      sort(xz, 0, 1)
+      xz.toList
     }
   }
 
   private def swap[T](xs: ListBuffer[T], i: Int, y: Int) {
-      val t = xs(i)
-      xs(i) = xs(y)
-      xs(y) = t
-    }
+    val t = xs(i)
+    xs(i) = xs(y)
+    xs(y) = t
+  }
 }

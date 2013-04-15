@@ -14,10 +14,9 @@ object MergeSort extends App {
     def merge[T <% Ordered[T]](l: List[T], r: List[T]): List[T] = (l, r) match {
       case (_, Nil) => l
       case (Nil, _) => r
-      case (x :: xs, y :: ys) => {
+      case (x :: xs, y :: ys) => 
         if (x < y) x :: merge(xs, r)
         else y :: merge(l, ys)
-      }
     }
     val middle = xs.length / 2
     if (middle == 0) xs
