@@ -1,6 +1,7 @@
 /**
  * Bubble sort in imperative and functional ways
  */
+package algorithms
 
 import scala.collection.mutable.ListBuffer
 

@@ -1,3 +1,5 @@
+package algorithms
+
 object InsertionSort extends App {
   println(sort(List(5, 4, 3, 2, 1, 5, 1, 2, 4, 10)))
 

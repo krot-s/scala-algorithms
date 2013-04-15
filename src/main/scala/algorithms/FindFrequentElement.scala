@@ -1,6 +1,8 @@
 /**
- * Find most frequest elemet with Boyer-Moore algorithm
+ * Find most frequent element with Boyer-Moore algorithm
  */
+package algorithms
+
 object FindFrequentElement extends App {
 	val xs = Array(1,2,3,1,1)
 	println(mostFrequentElement(xs : _*))

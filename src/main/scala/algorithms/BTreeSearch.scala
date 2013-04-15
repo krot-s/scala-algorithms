@@ -1,5 +1,8 @@
+package algorithms
+
 import scala.collection.immutable.List
 import scala.collection.mutable.Stack
+
 object BTreeSearch extends App {
   implicit def intToNode(value: Int) = new Node(value)
 
